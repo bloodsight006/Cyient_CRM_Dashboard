@@ -157,6 +157,7 @@
         if (!res.ok) throw new Error(data.error || 'Login failed');
         if (data.role === 'student') location.href='/student';
         else if (data.role === 'trainer') location.href='/trainer';
+        else if (data.role === 'admin') location.href='/admin';
         else location.href='/';
       } catch (err) {
         showErr(err.message); btn.textContent='Sign In'; btn.disabled=false;

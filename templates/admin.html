@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Portal – Cyient Foundation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/logo.svg') }}" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Cyient" />
+          <div class="logo-text">
+            <div class="brand">Cyient Foundation</div>
+            <div class="brand-sub">Admin Portal</div>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar-nav" id="sidebar-nav">
+        <button class="nav-item active" data-key="dashboard" type="button">
+         <span class="nav-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+         </span>
+         <span class="nav-label">Dashboard</span>
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-card">
+          <div class="user-avatar">{{ user_initials }}</div>
+          <div class="user-info">
+            <div class="user-name">{{ user_name }}</div>
+            <div class="user-role">Admin</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" title="Open menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
+        </button>
+        <div class="page-heading">
+          <div class="breadcrumb"><span id="bc-section">Admin Portal</span></div>
+          <h1 id="page-title">Dashboard</h1>
+        </div>
+        <div class="topbar-actions">
+          <a href="/login" class="btn btn-ghost" id="logout-action" title="Logout">Logout</a>
+        </div>
+      </header>
+      <section class="content" id="content">
+        <div class="welcome-banner">
+          <h2>Welcome to the Admin Portal, {{ user_name }}</h2>
+          <p>More features will be added here soon.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+  <script>
+    document.getElementById('logout-action').addEventListener('click', async (e) => {
+      e.preventDefault();
+      try { 
+        const res = await fetch('/api/auth/logout', { method: 'POST' }); 
+        if (res.ok) window.location.href = '/login';
+      }
+      catch (err) { window.location.href = '/login'; }
+    });
+  </script>
+</body>
+</html>

@@ -26,6 +26,7 @@ Default password for **every** seeded account: `cyient@123`
 | Role        | Example username                       |
 |-------------|----------------------------------------|
 | Super Admin | `pavan.kumar@cyientfoundation.org`     |
+| Admin       | `admin@cyientfoundation.org`           |
 | Trainer     | `anil.reddy@cyient.org`                |
 | Student     | `student001@learner.cyient.org`        |
 
@@ -43,6 +44,7 @@ new password — no email server needed).
 - **Trainer** — Dashboard, Chapter Management (upload PDFs, set status),
   Student Management (add/edit), Mark Attendance, View Attendance, Certificates
   (view all issued), Tickets, Feedback, Change Password.
+- **Admin** — Dashboard (Additional administrative features to be added).
 - **Super Admin** — full CRM admin board + Ticket Management, Certificate
   Management, Feedback Management, Change Password.
 

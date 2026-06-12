@@ -221,7 +221,7 @@ def build_crud(name, table, fields, *, search_fields=None, select_extra="", join
 
 
 # ---------------------------------------------------------------------------
-# CRUD registrations for each module
+# CRUD registrations for each module.
 # ---------------------------------------------------------------------------
 build_crud(
     "administrators", "administrators",

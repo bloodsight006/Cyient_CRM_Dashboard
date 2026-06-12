@@ -858,3 +858,5 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
+
+// This is a placeholder for any global functions or variables that might be needed across different pages or components. You can add utility functions, constants, or any shared logic here that doesn't fit into the specific page modules above.

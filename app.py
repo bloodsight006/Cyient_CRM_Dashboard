@@ -526,9 +526,9 @@ def login_selection():
 
 @app.route("/login/<role>")
 def login_form(role):
-    if role not in ["student", "trainer", "admin", "superadmin"]:
+    if role not in ["student", "trainer", "superadmin"]:
         abort(404)
-    display_names = {"student": "Student", "trainer": "Trainer", "admin": "Admin", "superadmin": "Super Admin"}
+    display_names = {"student": "Student", "trainer": "Trainer", "superadmin": "Super Admin"}
     return render_template("login.html", role=role, role_name=display_names[role])
 
 @app.route("/student")
@@ -546,14 +546,6 @@ def trainer_dashboard():
     name = session.get("name") or "Trainer"
     initials = "".join([p[0] for p in name.split()[:2]]).upper() or "T"
     return render_template("trainer.html", user_name=name, user_initials=initials)
-
-@app.route("/admin")
-def admin_dashboard():
-    if not session.get("user_id") or session.get("role") != "admin":
-        return redirect("/login/admin")
-    name = session.get("name") or "Admin"
-    initials = "".join([p[0] for p in name.split()[:2]]).upper() or "A"
-    return render_template("admin.html", user_name=name, user_initials=initials)
 
 
 # ---------------------------------------------------------------------------

@@ -90,3 +90,14 @@ Super Admins get a **Bulk Upload** button in the top bar. Upload a `.csv` or
 
 Requires `openpyxl` (added to `requirements.txt`) for Excel files; CSV needs
 nothing extra.
+
+
+## Fixes in this build (presentation-ready)
+- **Role-selection page now perfectly centered** — the grid was set to 4 columns
+  while there are only 3 roles (Super Admin / Trainer / Student), which pushed the
+  cards left of centre. Fixed to 3 columns + vertical centering.
+- **Admin module removed** — the extra "Admin" portal/role added externally is
+  gone; only Super Admin, Trainer and Student remain (as originally designed).
+- **Charts work offline** — Chart.js is now bundled locally in
+  `static/vendor/chart.umd.js` instead of loaded from a CDN, so the Master Board
+  charts render even with no internet during a presentation.

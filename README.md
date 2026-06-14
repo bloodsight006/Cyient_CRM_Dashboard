@@ -26,7 +26,6 @@ Default password for **every** seeded account: `cyient@123`
 | Role        | Example username                       |
 |-------------|----------------------------------------|
 | Super Admin | `pavan.kumar@cyientfoundation.org`     |
-| Admin       | `admin@cyientfoundation.org`           |
 | Trainer     | `anil.reddy@cyient.org`                |
 | Student     | `student001@learner.cyient.org`        |
 
@@ -44,7 +43,6 @@ new password — no email server needed).
 - **Trainer** — Dashboard, Chapter Management (upload PDFs, set status),
   Student Management (add/edit), Mark Attendance, View Attendance, Certificates
   (view all issued), Tickets, Feedback, Change Password.
-- **Admin** — Dashboard (Additional administrative features to be added).
 - **Super Admin** — full CRM admin board + Ticket Management, Certificate
   Management, Feedback Management, Change Password.
 
@@ -92,12 +90,10 @@ Requires `openpyxl` (added to `requirements.txt`) for Excel files; CSV needs
 nothing extra.
 
 
-## Fixes in this build (presentation-ready)
+## Fixes in this build (presentation-ready to show in the company meeting)
 - **Role-selection page now perfectly centered** — the grid was set to 4 columns
   while there are only 3 roles (Super Admin / Trainer / Student), which pushed the
   cards left of centre. Fixed to 3 columns + vertical centering.
-- **Admin module removed** — the extra "Admin" portal/role added externally is
-  gone; only Super Admin, Trainer and Student remain (as originally designed).
 - **Charts work offline** — Chart.js is now bundled locally in
   `static/vendor/chart.umd.js` instead of loaded from a CDN, so the Master Board
   charts render even with no internet during a presentation.

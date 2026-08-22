@@ -1,6 +1,6 @@
-# Cyient Foundation CRM Dashboard
+# Cyient Foundation CSR Dashboard
 
-A Flask + SQLite CRM prototype with three role-based portals:
+A Flask + SQLite CSR prototype with three role-based portals:
 **Super Admin**, **Trainer**, and **Student** — each with real login
 (passwords hashed and stored in SQLite), file uploads, tickets,
 certificates, attendance, feedback and chapter management.
